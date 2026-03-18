@@ -1,11 +1,5 @@
 """
-FCDT-TPFF Master Script
-Complete end-to-end pipeline for paper reproduction
 
-Optimized for 32GB RAM system
-
-Usage:
-    python fcdt_master_script.py --mimic_path /path/to/mimic-iv-2.2/
 
 Steps:
     1. Data extraction from MIMIC-IV
@@ -14,7 +8,7 @@ Steps:
     4. Evaluation & baseline comparisons
     5. Figure generation
 
-Author: Research Team
+
 """
 
 import os
@@ -118,9 +112,9 @@ def stage3_model_training(config):
     print("STAGE 3: MODEL TRAINING")
     print("=" * 80)
     
-    from fcdt_tpff_training import main_training_and_evaluation
+    from fcdt_tpff_training import main
     
-    model, results, labels, embeddings = main_training_and_evaluation()
+    model, results, labels, embeddings = main()
     
     print("\n✓ Stage 3 Complete!")
     return model, results, labels, embeddings
@@ -383,3 +377,4 @@ Examples:
 
 if __name__ == "__main__":
     main()
+
